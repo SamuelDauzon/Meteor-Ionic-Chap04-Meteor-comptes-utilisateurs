@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 
 Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_AND_EMAIL'
+  passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
 });
 
 accountsUIBootstrap3.setLanguage('fr');
