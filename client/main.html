@@ -4,10 +4,26 @@
 
 <body>
   <nav class="navbar navbar-default">
-  	<div class="container-fluid">
-  		<ul class="nav navbar-nav navbar-right">
-      	{{>loginButtons }}
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        {{>loginButtons }}
       </ul>
     </div>
   </nav>
+  {{#if currentUser }}
+    {{>mesNotes }}
+  {{/if}}
 </body>
+
+<template name="mesNotes">
+  <h2>Mes notes</h2>
+  {{#if notes }}
+    <form name="modifierNotes">
+      <textarea name="notes">{{ notes.notes }}</textarea>
+      <input type="hidden" name="_id" value="{{ notes._id }}">
+      <input type="submit" value="Modifier" />
+    </form>
+  {{else}}
+    <button id="creerNotes">Ajouter mes notes</button>
+  {{/if}}
+</template>
