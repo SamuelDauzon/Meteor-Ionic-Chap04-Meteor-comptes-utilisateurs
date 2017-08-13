@@ -4,7 +4,7 @@ Meteor.methods({
       notes = NotesCollection.find({userId:this.userId}).count();
       if (!notes) {
         document = {
-          notes: 'Entrez vos notes ici',
+          notes: Meteor.settings.private.texteParDefaut,
           userId: this.userId
         };
         return NotesCollection.insert(document);
